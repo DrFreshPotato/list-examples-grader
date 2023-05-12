@@ -1,0 +1,32 @@
+JUnit version 4.13.2
+.E.E.E
+Time: 22.549
+There were 3 failures:
+1) testMerge(TestListExamples)
+java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3512)
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3481)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:237)
+	at java.base/java.util.ArrayList.grow(ArrayList.java:244)
+	at java.base/java.util.ArrayList.add(ArrayList.java:454)
+	at java.base/java.util.ArrayList.add(ArrayList.java:467)
+	at ListExamples.merge(ListExamples.java:42)
+	at TestListExamples.testMerge(TestListExamples.java:54)
+	at java.base/java.lang.invoke.LambdaForm$DMH/0x0000000801012400.invokeVirtual(LambdaForm$DMH)
+	at java.base/java.lang.invoke.LambdaForm$MH/0x0000000801013000.invoke(LambdaForm$MH)
+	at java.base/java.lang.invoke.Invokers$Holder.invokeExact_MT(Invokers$Holder)
+2) testMergeRightEnd(TestListExamples)
+org.junit.runners.model.TestTimedOutException: test timed out after 500 milliseconds
+	at ListExamples.merge(ListExamples.java:43)
+	at TestListExamples.testMergeRightEnd(TestListExamples.java:33)
+3) testFilter(TestListExamples)
+java.lang.AssertionError: expected:<[Bottom, Boots, With, Fur]> but was:<[Fur, With, Boots, Bottom]>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at TestListExamples.testFilter(TestListExamples.java:43)
+
+FAILURES!!!
+Tests run: 3,  Failures: 3
+
