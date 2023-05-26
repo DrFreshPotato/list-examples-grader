@@ -15,13 +15,16 @@ then
     cp -r lib grading-area
 else 
     echo "ListExamples.java file not found"
+    exit
 fi
 cd grading-area
 javac ListExamples.java
 javac -cp $CPATH TestListExamples.java
 #Not using $CPATH because command is different on windows than mac/linux
 java -cp ".;lib/junit-4.13.2.jar;lib/hamcrest-core-1.3.jar" org.junit.runner.JUnitCore TestListExamples > results.txt
-grep "Failure" results.txt
+
+grep -e "tests" -e "Failure" results.txt
+#cat results.txt
 
 echo 'Finished cloning'
 
